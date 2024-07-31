@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #652408;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #343a40;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#foto_vendedor {
+    cursor: pointer;
+    width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#produtos .produto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#foto_preview {
+    width: auto;
+    max-height: 300px;
+    margin-top: 10px;
+}
+
+#formulario_produtos, #formulario_senha {
+    display: none;
+}
+
+
+
+
+/*admin.css*/
