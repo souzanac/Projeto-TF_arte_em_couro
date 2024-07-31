@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/home.css">
+        <title>Home</title>
+    </head>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="#" class="navbar-brand"><img src="./img/icones/logo.png" alt="LOGO" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between">
+                <div class="search-container">
+                    <input type="text" class="form-control search-bar" placeholder="O que você está buscando?">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="./cintos.html" class="nav-link">Cintos</a></li>
+                        <li class="nav-item"><a href="./carteiras.html" class="nav-link">Carteiras</a></li>
+                        <li class="nav-item"><a href="./outros.html" class="nav-link">Outros</a></li>
+                        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas"></button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login"></button>
+                </div>
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <hr class="separator">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./cintos.html">Cintos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./carteiras.html">Carteiras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./outros.html">Outros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contato.html">Contato</a></li>
+                </ul>
+                <hr class="separator">
+                <div class="offcanvas-buttons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas">Dúvidas</button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login">Meu usuário</button>
+                </div>
+                <hr class="separator">
+                <div class="offcanvas-social-title">
+                    <h5>Redes Sociais</h5>
+                </div>
+                <div class="offcanvas-social">
+                   <a href="https://www.tiktok.com" target="_blank"><img src="./img/icones/tiktok.png" alt="TikTok" class="social-icon"></a>
+                   <a href="https://www.instagram.com" target="_blank"><img src="./img/icones/instagramBranco.png" alt="Instagram" class="social-icon"></a>
+                   <a href="https://wa.me/1234567890" target="_blank"><img src="./img/icones/whatsappBranco.png" alt="WhatsApp" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </header> 
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+    
+    <main class="container mt-5">
+        <h1 class="mb-4">Seus Produtos</h1>
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="mb-4">
+                    <img src="./img/foto_usuario.png" alt="Foto do vendedor" class="img-fluid rounded-circle" id="foto_vendedor">
+                    <input type="file" id="upload_foto" style="display: none;">
+                    
+                </div>
+                <h2 class="h5">Nome do Vendedor</h2>
+
+                <!-- Botões para abrir os modais -->
+                <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#modalSenha">Mudar Senha</button>
+                <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#modalProduto">Enviar Produto</button>
+                <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#modaleditarProduto">Editar Produto</button>
+                <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#modalapagarProduto">Apagar Produto</button>
+                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#modalApagarConta">Apagar Minha Conta</button>
+            </aside>
+            <div class="col-md-9">
+                <div id="produtos" class="row">
+                    <!-- Produtos serão listados aqui -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Esqueceu a Senha -->
+    <div class="modal fade" id="modalSenha" tabindex="-1" aria-labelledby="modalSenhaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSenhaLabel">Mudar Senha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="esqueceu_senha" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha_atual" class="form-label">Senha Atual</label>
+                            <input type="password" class="form-control" id="senha_atual" name="senha_atual">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nova_senha" class="form-label">Nova Senha</label>
+                            <input type="password" class="form-control" id="nova_senha" name="nova_senha">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmar_senha" class="form-label">Confirmar Nova Senha</label>
+                            <input type="password" class="form-control" id="confirmar_senha" name="confirmar_senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Enviar Produto -->
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-labelledby="modalProdutoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProdutoLabel">Enviar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="enviar_produtos" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="previewImage(event)">
+                            <img id="foto_preview" src="" alt="Preview da imagem" style="display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="preco" class="form-label">Preço:</label>
+                            <input type="number" class="form-control" id="preco" name="preco">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" placeholder="Selecione uma categoria">Selecione a Categoria:</label>
+                            <select class="form-control" id="categoria">
+                            <option value="1">Cintos</option>
+                            <option value="2">Carteiras</option>
+                            <option value="3">Outros</option>
+                            </select>      
+                        </div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Produto -->
+    <div class="modal fade" id="modaleditarProduto" tabindex="-1" aria-labelledby="modaleditarProdutoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaleditarProdutoLabel">Editar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="enviar_produtos" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" placeholder="Selecione o produto">Selecione o produto:</label>
+                            <select class="form-control" id="categoria">
+                                <option value="1">Cinto Balaiado Premium Mod1 + Suas Iniciais</option>
+                                <option value="2">Cinto Balaiado - Preto</option>
+                                <option value="3">Cinto Balaiado - Marrom Avermelhado</option>
+                                <option value="4">Cinto Balaiado - Marrom Claro</option>
+                                <option value="5">Cinto Balaiado Premium Mod2 + Suas Iniciais</option>
+                                <option value="6">Cinto Liso Marrom + Suas Iniciais</option>
+                                <option value="7">Cinto Entalhado Folhagem 2 Marrom Escuro/Claro - Cabeça de Boi + Suas Iniciais</option>
+                                <option value="8">Cinto Entalhado Folhagem Marrom Escuro/Claro - Cartas de Baralho e Penas + Suas Iniciais</option>
+                                <option value="9">Cinto TF Entalhado Folhagem c/ Costura Dupla</option>
+                                <option value="10">Cinto Entalhado Floral Mod2 + Suas Iniciais</option>
+                                <option value="11">Cinto Entalhado Floral Mod3 - Marrom Claro</option>
+                                <option value="12">Cinto Entalhado Floral Mod4 Nss Senhora c/ Cruz + Suas Iniciais</option>
+                                <option value="13">Cinto Liso Marrom</option>
+                                <option value="14">Cinto Entalhado Floral Marrom</option>
+                                <option value="15">Cinto Entalhado Marrom Claro Strass + Iniciais</option>
+                                <option value="16">Cinto Entalhado Cartas e Penas</option>
+                                <option value="17">Cinto Entalhado Nss Aparecida Marrom</option>
+                                <option value="18">Cinto Entalhado Folhas + Iniciais Cursivas</option>
+                                <option value="19">Cinto Liso Preto + Apliques Importados</option>
+                                <option value="20">Cinto Masc. Balaiado Marrom com Bordas Escuras + Entalhe Cabeça de Boi</option>
+                                <option value="21">Cinto Masc. Balaiado Premium Mod2</option>
+                                <option value="22">Cinto Masc. Entalhado Folhagem c/ Costura Dupla + Inicial</option>
+                                <option value="23">Cinto Balaiado + Inicial</option>
+                                <option value="24">Cinto Fem. Balaido c/ Pedrinhas + Nome</option>
+                                <option value="25">Cinto Fem. Entalhado Galhos c/ Flores Lilás + Iniciais</option>
+                                <option value="26">Cinto Fem. Liso c/ Pedrarias + Iniciais</option>
+                                <option value="27">Cinto Fem. Entalhado Florido c/ Apliques Laterais</option>
+                                <option value="28">Carteira Balaiada com Entalhes Nelore e Bandeiras Coloridas + Nome Personalizado</option>
+                                <option value="29">Carteira Balaiada c/ Entalhes Cabeças de Boi</option>
+                                <option value="30">Carteira Losangos c/ Entalhades Indío + Iniciais</option>
+                                <option value="31">Carteira Losangos com Entalhe Boi Nelore</option>
+                                <option value="32">Carteira Balaiada Entalhes Pitbull + Nome</option>
+                                <option value="33">Carteira Losangos c/ Entalhe Trator Jhon Deere</option>
+                                <option value="34">Carteira Balaida c/ Entalhes Agronomia e Nss Senhora Aparecida</option>
+                                <option value="35">Carteira Personalizada c/ Logomarca</option>
+                                <option value="36">Carteira Balaiada c/ Entalhe Floral Mod1 + Nome - Marrom Claro</option>
+                                <option value="37">Carteira Balaiada c/ Entalhe Floral Mod2 - Marrom Claro</option>
+                                <option value="38">Carteira Balaiada c/ Entalhe Floral Mod3 + Iniciais - Marrom c/ Laterais Escuras</option>
+                                <option value="39">Carteira Entalhada Floral Mod4 c/ cavalo - Marrom Claro</option>
+                                <option value="40">Carteira Entalhada Losangos Mod1 + Nome Cursivo Diagonal</option>
+                                <option value="41">Carteira Entalhada Floral Mod4 - Marrom c/ Laterais Escuras</option>
+                                <option value="42">Carteira Entalhada Losangos Mod2 Floral + Nome em Letra de Forma Diagonal</option>
+                                <option value="43">Carteira Entalhada Losangos Mod3 Floral + Nome em letra de Forma Diagonal</option>
+                                <option value="44">Correia p/ Espora Entalhes Mod1 + Nome Personalizado</option>
+                                <option value="45">Correia p/ Espora Entalhes Mod2 + Iniciais Personalizadas</option>
+                                <option value="46">Correia p/ Espora Entalhes Mod3 + Logomarca Personalizada</option>
+                                <option value="47">Correia p/ Espora Entalhes Mod4 + Logomarca Personalizada</option>
+                                <option value="48">Porta Isopor Balaiado + Sua Logomarca Entalhada</option>
+                                <option value="49">Porta Isopor Entalhado Floral c/ Pitbull</option>
+                                <option value="50">Porta Isopor Entalhes Losangos Mod1 + Sua Inicial Entalhada</option>
+                                <option value="51">Porta Isopor Entalhado Nss Senhora</option>
+                                <option value="52">Abridor de Garrafa Floral TF</option>
+                                <option value="53">Crucifixo p/ retrovisor Mod1</option>
+                                <option value="54">Crucifixo p/ Retrovisor Mod2</option>
+                                <option value="55">Porta-Chaves Entalhado Girassol + Fé</option>
+                            </select>      
+                        </div>
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="previewImage(event)">
+                            <img id="foto_preview" src="" alt="Preview da imagem" style="display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="preco" class="form-label">Preço:</label>
+                            <input type="number" class="form-control" id="preco" name="preco">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" placeholder="Selecione uma categoria">Selecione a Categoria:</label>
+                            <select class="form-control" id="categoria">
+                            <option value="1">Cintos</option>
+                            <option value="2">Carteiras</option>
+                            <option value="3">Outros</option>
+                            </select>      
+                        </div>
+                        <button type="submit" class="btn btn-success">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Apagar Produto -->
+    <div class="modal fade" id="modalapagarProduto" tabindex="-1" aria-labelledby="modalapagarProdutoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalapagarProdutoLabel">Apagar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="enviar_produtos" method="post" enctype="multipart/form-data">                                                                                              
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" placeholder="Selecione o produto">Selecione o produto:</label>
+                            <select class="form-control" id="categoria">
+                                <option value="1">Cinto Balaiado Premium Mod1 + Suas Iniciais</option>
+                                <option value="2">Cinto Balaiado - Preto</option>
+                                <option value="3">Cinto Balaiado - Marrom Avermelhado</option>
+                                <option value="4">Cinto Balaiado - Marrom Claro</option>
+                                <option value="5">Cinto Balaiado Premium Mod2 + Suas Iniciais</option>
+                                <option value="6">Cinto Liso Marrom + Suas Iniciais</option>
+                                <option value="7">Cinto Entalhado Folhagem 2 Marrom Escuro/Claro - Cabeça de Boi + Suas Iniciais</option>
+                                <option value="8">Cinto Entalhado Folhagem Marrom Escuro/Claro - Cartas de Baralho e Penas + Suas Iniciais</option>
+                                <option value="9">Cinto TF Entalhado Folhagem c/ Costura Dupla</option>
+                                <option value="10">Cinto Entalhado Floral Mod2 + Suas Iniciais</option>
+                                <option value="11">Cinto Entalhado Floral Mod3 - Marrom Claro</option>
+                                <option value="12">Cinto Entalhado Floral Mod4 Nss Senhora c/ Cruz + Suas Iniciais</option>
+                                <option value="13">Cinto Liso Marrom</option>
+                                <option value="14">Cinto Entalhado Floral Marrom</option>
+                                <option value="15">Cinto Entalhado Marrom Claro Strass + Iniciais</option>
+                                <option value="16">Cinto Entalhado Cartas e Penas</option>
+                                <option value="17">Cinto Entalhado Nss Aparecida Marrom</option>
+                                <option value="18">Cinto Entalhado Folhas + Iniciais Cursivas</option>
+                                <option value="19">Cinto Liso Preto + Apliques Importados</option>
+                                <option value="20">Cinto Masc. Balaiado Marrom com Bordas Escuras + Entalhe Cabeça de Boi</option>
+                                <option value="21">Cinto Masc. Balaiado Premium Mod2</option>
+                                <option value="22">Cinto Masc. Entalhado Folhagem c/ Costura Dupla + Inicial</option>
+                                <option value="23">Cinto Balaiado + Inicial</option>
+                                <option value="24">Cinto Fem. Balaido c/ Pedrinhas + Nome</option>
+                                <option value="25">Cinto Fem. Entalhado Galhos c/ Flores Lilás + Iniciais</option>
+                                <option value="26">Cinto Fem. Liso c/ Pedrarias + Iniciais</option>
+                                <option value="27">Cinto Fem. Entalhado Florido c/ Apliques Laterais</option>
+                                <option value="28">Carteira Balaiada com Entalhes Nelore e Bandeiras Coloridas + Nome Personalizado</option>
+                                <option value="29">Carteira Balaiada c/ Entalhes Cabeças de Boi</option>
+                                <option value="30">Carteira Losangos c/ Entalhades Indío + Iniciais</option>
+                                <option value="31">Carteira Losangos com Entalhe Boi Nelore</option>
+                                <option value="32">Carteira Balaiada Entalhes Pitbull + Nome</option>
+                                <option value="33">Carteira Losangos c/ Entalhe Trator Jhon Deere</option>
+                                <option value="34">Carteira Balaida c/ Entalhes Agronomia e Nss Senhora Aparecida</option>
+                                <option value="35">Carteira Personalizada c/ Logomarca</option>
+                                <option value="36">Carteira Balaiada c/ Entalhe Floral Mod1 + Nome - Marrom Claro</option>
+                                <option value="37">Carteira Balaiada c/ Entalhe Floral Mod2 - Marrom Claro</option>
+                                <option value="38">Carteira Balaiada c/ Entalhe Floral Mod3 + Iniciais - Marrom c/ Laterais Escuras</option>
+                                <option value="39">Carteira Entalhada Floral Mod4 c/ cavalo - Marrom Claro</option>
+                                <option value="40">Carteira Entalhada Losangos Mod1 + Nome Cursivo Diagonal</option>
+                                <option value="41">Carteira Entalhada Floral Mod4 - Marrom c/ Laterais Escuras</option>
+                                <option value="42">Carteira Entalhada Losangos Mod2 Floral + Nome em Letra de Forma Diagonal</option>
+                                <option value="43">Carteira Entalhada Losangos Mod3 Floral + Nome em letra de Forma Diagonal</option>
+                                <option value="44">Correia p/ Espora Entalhes Mod1 + Nome Personalizado</option>
+                                <option value="45">Correia p/ Espora Entalhes Mod2 + Iniciais Personalizadas</option>
+                                <option value="46">Correia p/ Espora Entalhes Mod3 + Logomarca Personalizada</option>
+                                <option value="47">Correia p/ Espora Entalhes Mod4 + Logomarca Personalizada</option>
+                                <option value="48">Porta Isopor Balaiado + Sua Logomarca Entalhada</option>
+                                <option value="49">Porta Isopor Entalhado Floral c/ Pitbull</option>
+                                <option value="50">Porta Isopor Entalhes Losangos Mod1 + Sua Inicial Entalhada</option>
+                                <option value="51">Porta Isopor Entalhado Nss Senhora</option>
+                                <option value="52">Abridor de Garrafa Floral TF</option>
+                                <option value="53">Crucifixo p/ retrovisor Mod1</option>
+                                <option value="54">Crucifixo p/ Retrovisor Mod2</option>
+                                <option value="55">Porta-Chaves Entalhado Girassol + Fé</option>
+                            </select>      
+                        </div>
+                        <button type="submit" class="btn btn-success">Apagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Apagar Minha Conta -->
+    <div class="modal fade" id="modalApagarConta" tabindex="-1" aria-labelledby="modalApagarContaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalApagarContaLabel">Apagar Minha Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja apagar sua conta? Esta ação não pode ser desfeita.</p>
+                    <button type="button" class="btn btn-danger">Apagar Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const data = {};
+            for (const [key, value] of params.entries()) {
+                data[key] = value;
+            }
+            return data;
+        }
+
+        // Exibir os dados na página
+        function displayAdminData() {
+            const adminData = getQueryParams();
+            const dadosAdminDiv = document.getElementById('dados-admin');
+
+            // Criar um elemento para cada dado, exceto aqueles relacionados a senha
+            for (const key in adminData) {
+                if (adminData.hasOwnProperty(key) && !key.toLowerCase().includes('senha')) {
+                    const p = document.createElement('p');
+                    p.textContent = `${key}: ${adminData[key]}`;
+                    dadosAdminDiv.appendChild(p);
+                }
+            }
+        }
+
+        // Chamar a função para exibir os dados ao carregar a página
+        displayAdminData();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>

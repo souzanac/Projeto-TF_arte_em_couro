@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/duvidas.css">
+    <title>Dúvidas</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="#" class="navbar-brand"><img src="./img/icones/logo.png" alt="LOGO" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between">
+                <div class="search-container">
+                    <input type="text" class="form-control search-bar" placeholder="O que você está buscando?">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="./cintos.html" class="nav-link">Cintos</a></li>
+                        <li class="nav-item"><a href="./carteiras.html" class="nav-link">Carteiras</a></li>
+                        <li class="nav-item"><a href="./outros.html" class="nav-link">Outros</a></li>
+                        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas"></button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login"></button>
+                </div>
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <hr class="separator">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./cintos.html">Cintos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./carteiras.html">Carteiras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./outros.html">Outros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contato.html">Contato</a></li>
+                </ul>
+                <hr class="separator">
+                <div class="offcanvas-buttons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas">Dúvidas</button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login">Meu usuário</button>
+                </div>
+                <hr class="separator">
+                <div class="offcanvas-social-title">
+                    <h5>Redes Sociais</h5>
+                </div>
+                <div class="offcanvas-social">
+                   <a href="https://www.tiktok.com/@t.farteemcouro?_t=8oM5pUEejHJ&_r=1" target="_blank"><img src="./img/icones/tiktok.png" alt="TikTok" class="social-icon"></a>
+                   <a href="https://www.instagram.com/tfarteemcouro?igsh=MTFyOTlubTN4dDlscg==" target="_blank"><img src="./img/icones/instagramBranco.png" alt="Instagram" class="social-icon"></a>
+                   <a href="https://wa.me/5534999751986" target="_blank"><img src="./img/icones/whatsappBranco.png" alt="WhatsApp" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </header>     
+
+    <div class="container mt-5">
+        <h1 class="text-center">Perguntas Frequentes</h1>
+        <div id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Como posso fazer um pedido?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Para fazer um pedido, entre em contato conosco pelo WhatsApp. Nós atendemos pedidos de todo o Brasil.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Quais são as formas de pagamento aceitas?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Aceitamos pagamentos via transferência bancária e cartão de crédito. Detalhes serão fornecidos no momento da compra.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Qual é o prazo de entrega?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        O prazo de entrega varia de acordo com a localização. Em média, leva de 5 a 10 dias úteis para a entrega em todo o Brasil.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Como posso fazer a troca de um produto?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Para realizar uma troca, entre em contato conosco pelo WhatsApp. As trocas são aceitas em até 7 dias após o recebimento do produto.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Os produtos são personalizados?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Sim, muitos dos nossos produtos podem ser personalizados. Entre em contato conosco pelo WhatsApp para discutir suas necessidades específicas.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Os produtos são feitos à mão?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Sim, todos os nossos produtos são feitos à mão com muito cuidado e atenção aos detalhes.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Como posso entrar em contato com o artesão?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Você pode entrar em contato diretamente pelo WhatsApp. O número de contato está disponível em nossa página de contato.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingEight">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Vocês enviam para fora do Brasil?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        No momento, fazemos envios apenas dentro do Brasil.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="rodape text-white py-2 d-none d-md-block">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 personalizacao">
+                    <h2>Personalize Seu Produto</h2>
+                    <p>Nossos produtos são personalizados, desde os desenhos aos detalhes. Personalize seu próprio modelo através do whatsapp:</p>
+                    <a href="https://wa.me/5534999751986"><img src="./img/icones/whatsappBranco.png" alt="whatsapp" class="img-fluid"></a>
+                </div>
+                <div class="col-md-4 postagens">
+                    <h2>Acompanhe Nossas Redes Sociais</h2>
+                    <p>Veja mais sobre nosso trabalho, através do Instagram e Tik-Tok, para inspirar-se na hora de personalizar o seu produto:</p>
+                    <a href="https://www.instagram.com/tfarteemcouro?igsh=MTFyOTlubTN4dDlscg=="><img src="./img/icones/instagramBranco.png" alt="Instagram" class="img-fluid"></a>
+                    <a href="https://www.tiktok.com/@t.farteemcouro?_t=8oM5pUEejHJ&_r=1"><img src="./img/icones/tiktok.png" alt="Tik-tok" class="img-fluid"></a>
+                </div>
+                <div class="col-md-4 duvidas">
+                    <h2>Tire Suas Dúvidas</h2>
+                    <p>Para tirar dúvidas sobre nossos produtos, prazos, fretes, entre outros, basta acessar a página clicando no ícone abaixo:</p>
+                    <a href="duvidas.html"><img src="./img/icones/duvidaBranco.png" alt="Dúvidas" class="img-fluid"></a>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12">
+                    <div class="linha-abaixo border-top border-light my-2"></div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12 direitos text-center">
+                    <h2>2024@Todos os direitos reservados.</h2>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script/search-bar.js"></script>
+</body>
+</html>
+

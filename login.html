@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/formulários.css">
+    <title>Login</title>
+</head>
+<body>
+    
+    <form class="formulario" id="loginForm">
+        <header>
+            <h2>Login Usuário</h2>
+        </header>
+        <div>
+            <img src="./img/icones/logo.png" alt="">
+        </div>
+
+        <div class="form-group">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" required placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="senha"></label>
+            <input type="password" id="senha" name="senha" required placeholder="Senha">
+        </div>
+
+        <ul>
+            <li>
+                <input type="radio" id="cliente" name="tipo_usuario" value="cliente">
+                <label for="cliente">Cliente</label>
+            </li>        
+            <li><a href="cadastro_clientes.html">Cadastre-se: Cliente</a></li>
+        </ul>
+
+        <ul>
+            <li>
+                <input type="radio" id="administrador" name="tipo_usuario" value="administrador">
+                <label for="administrador">Administrador</label>
+            </li>        
+            <li><a href="cadastro_administrador.html">Cadastre-se: Administrador</a></li>
+        </ul>
+
+        <div class="form-group">
+            <button type="submit" id="submitBtn">Entrar</button>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script/form.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Usuário</title>
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/usuario.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Para ícones -->
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="#" class="navbar-brand"><img src="./img/icones/logo.png" alt="LOGO" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between">
+                <div class="search-container">
+                    <input type="text" class="form-control search-bar" placeholder="O que você está buscando?">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="./cintos.html" class="nav-link">Cintos</a></li>
+                        <li class="nav-item"><a href="./carteiras.html" class="nav-link">Carteiras</a></li>
+                        <li class="nav-item"><a href="./outros.html" class="nav-link">Outros</a></li>
+                        <li class="nav-item"><a href="./contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas"></button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login"></button>
+                </div>
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <hr class="separator">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./cintos.html">Cintos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./carteiras.html">Carteiras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./outros.html">Outros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contato.html">Contato</a></li>
+                </ul>
+                <hr class="separator">
+                <div class="offcanvas-buttons">
+                    <button class="icon-button btn btn-light" onclick="window.location.href='./duvidas.html'"><img src="./img/icones/duvidas.png" alt="Dúvidas">Dúvidas</button>
+                    <button class="icon-button btn btn-light" onclick="window.location.href='login.html'"><img src="./img/icones/login (1).png" alt="Login">Meu usuário</button>
+                </div>
+                <hr class="separator">
+                <div class="offcanvas-social-title">
+                    <h5>Redes Sociais</h5>
+                </div>
+                <div class="offcanvas-social">
+                   <a href="https://www.tiktok.com/@t.farteemcouro?_t=8oM5pUEejHJ&_r=1" target="_blank"><img src="./img/icones/tiktok.png" alt="TikTok" class="social-icon"></a>
+                   <a href="https://www.instagram.com/tfarteemcouro?igsh=MTFyOTlubTN4dDlscg==" target="_blank"><img src="./img/icones/instagramBranco.png" alt="Instagram" class="social-icon"></a>
+                   <a href="https://wa.me/5534999751986" target="_blank"><img src="./img/icones/whatsappBranco.png" alt="WhatsApp" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <div class="container mt-5">
+        <div class="container mt-5">
+        <!-- Seção de Perfil do Usuário -->
+        <div class="card mb-4">
+            <div class="card-header">Perfil do Usuário</div>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <img src="./img/foto_usuario.png" alt="Foto do Usuário" class="rounded-circle mr-3" id="profilePic">
+                    <div>
+                        <h5 id="displayName">Nome do Usuário</h5>
+                        <p id="displayEmail">email@exemplo.com</p>
+                        <div id="displayCategories">
+                            <span class="badge badge-primary mr-2">Cinto</span>
+                            <span class="badge badge-primary mr-2">Carteira</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-link ml-auto" id="editProfileButton">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button class="btn btn-secondary" id="changePasswordButton">Alterar Senha</button>
+                <button class="btn btn-primary" id="saveChangesButton" disabled>Salvar Alterações</button>
+            </div>
+        </div>
+
+        <!-- Seção de Editar Perfil -->
+        <div class="card mb-4" id="editProfileSection" style="display: none;">
+            <div class="card-header">Editar Perfil</div>
+            <div class="card-body">
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="profilePicture">Foto de Perfil</label>
+                        <input type="file" class="form-control-file" id="profilePicture">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Nome de Usuário</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Categorias de Interesse</label>
+                        <div id="interestCategories">
+                            <!-- As categorias de interesse selecionadas pelo usuário serão exibidas aqui -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button class="btn btn-secondary" id="cancelEditButton">Cancelar</button>
+                <button class="btn btn-primary" id="saveProfileButton">Salvar Alterações</button>
+            </div>
+        </div>
+
+        <!-- Seção de Sugestões de Design -->
+        <div class="card mb-4">
+            <div class="card-header">Sugestão de Design de Produtos</div>
+            <div class="card-body">
+                <form id="suggestionForm">
+                    <div class="form-group">
+                        <label for="productName">Nome do Produto</label>
+                        <input type="text" class="form-control" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Categoria</label>
+                        <select class="form-control" id="productCategory" required>
+                            <option value="cinto">Cinto</option>
+                            <option value="carteira">Carteira</option>
+                            <option value="porta-isopor">Porta-Isopor</option>
+                            <option value="correia-espora">Correia de Espora</option>
+                            <option value="acessorios-retrovisor">Acessórios para Retrovisor</option>
+                            <option value="abridor-garrafa">Abridor de Garrafa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Imagem do Design</label>
+                        <input type="file" class="form-control-file" id="productImage" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Sugestão</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seção de Feedbacks -->
+        <div class="card mb-4">
+            <div class="card-header">Feedbacks dos Produtos</div>
+            <div class="card-body">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedbackText">Seu Feedback</label>
+                        <textarea class="form-control" id="feedbackText" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Avaliação</label>
+                        <div class="stars">
+                            <input type="radio" name="star" value="1" id="star1"><label for="star1">☆</label>
+                            <input type="radio" name="star" value="2" id="star2"><label for="star2">☆</label>
+                            <input type="radio" name="star" value="3" id="star3"><label for="star3">☆</label>
+                            <input type="radio" name="star" value="4" id="star4"><label for="star4">☆</label>
+                            <input type="radio" name="star" value="5" id="star5"><label for="star5">☆</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Feedback</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seção de Dúvidas -->
+        <div class="card mb-4">
+            <div class="card-header">Dúvidas</div>
+            <div class="card-body">
+                <form id="questionForm">
+                    <div class="form-group">
+                        <label for="questionText">Sua Dúvida</label>
+                        <textarea class="form-control" id="questionText" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Dúvida</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seção de Inscrição para Lançamentos -->
+        <div class="card mb-4">
+            <div class="card-header">Inscrição para Lançamento de Novos Produtos</div>
+            <div class="card-body">
+                <form id="subscriptionForm">
+                    <div class="form-group">
+                        <label for="email">Seu Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seção de Categorias de Interesse -->
+        <div class="card mb-4">
+            <div class="card-header">Categorias de Interesse</div>
+            <div class="card-body">
+                <form id="interestForm">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="cinto" id="interestCinto">
+                        <label class="form-check-label" for="interestCinto">Cinto</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="carteira" id="interestCarteira">
+                        <label class="form-check-label" for="interestCarteira">Carteira</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="porta-isopor" id="interestPortaIsopor">
+                        <label class="form-check-label" for="interestPortaIsopor">Porta-Isopor</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="correia-espora" id="interestCorreiaEspora">
+                        <label class="form-check-label" for="interestCorreiaEspora">Correia de Espora</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="acessorios-retrovisor" id="interestAcessoriosRetrovisor">
+                        <label class="form-check-label" for="interestAcessoriosRetrovisor">Acessórios para Retrovisor</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="abridor-garrafa" id="interestAbridorGarrafa">
+                        <label class="form-check-label" for="interestAbridorGarrafa">Abridor de Garrafa</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Interesse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script/swiper-bundle.min.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script/usuario.js"></script>
+</body>
+</html>
