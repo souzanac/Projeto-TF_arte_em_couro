@@ -211,7 +211,7 @@
                 <a href="https://www.instagram.com/tfarteemcouro?igsh=MTFyOTlubTN4dDlscg==" target="_blank"><img src="./img/icones/instagram.webp" alt="Instagram"></a>
                 <a href="https://wa.me/5534999751986" target="_blank"><img src="./img/icones/whatsapp.png" alt="WhatsApp"></a>
               </div>
-              <button class="btn btn-primary btn-doubts">Dúvidas</button>
+              <button class="btn btn-primary btn-doubts" onclick="window.location.href='./duvidas.html'">Dúvidas</button>
             </div>
             <div class="col-md-8">
               <h2 class="empresa">SOBRE A EMPRESA</h2>
@@ -258,57 +258,66 @@
     </div>
   </section>
 
-  <!-- Section Feedback -->
-  <section id="feedbacks" class="feedback-section">
-    <div class="container-feedback">
-        <h2 class="section-title">O que nossos clientes dizem</h2>
-        <div class="feedback-container swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Feedback Card 1 -->
-                <div class="feedback-card swiper-slide">
-                    <div class="feedback-header">
-                        <h5>João Silva</h5>
-                        <p>2024-07-01</p>
+  <section>
+        <div class="container-tf">
+            <div class="about-section card p-4">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="logo-circle mb-3">
+                            <img src="./img/icones/logoTF.jpg" alt="Logo" class="img-fluid">
+                        </div>
+                        <h4>TF - ARTES EM COURO</h4>
+                        <div class="social-icons my-3">
+                            <h5>Conheça mais sobre meu trabalho</h5>
+                            <a href="https://www.tiktok.com/@t.farteemcouro?_t=8oM5pUEejHJ&_r=1" target="_blank"><img src="./img/icones/tiktok.png" alt="TikTok"></a>
+                            <a href="https://www.instagram.com/tfarteemcouro?igsh=MTFyOTlubTN4dDlscg==" target="_blank"><img src="./img/icones/instagram.webp" alt="Instagram"></a>
+                            <a href="https://wa.me/5534999751986" target="_blank"><img src="./img/icones/whatsapp.png" alt="WhatsApp"></a>
+                        </div>
+                        <button class="btn btn-primary btn-doubts">Dúvidas</button>
                     </div>
-                    <div class="feedback-body">
-                        <p>Produto excelente, muito bem feito e durável. Recomendo!</p>
-                    </div>
-                    <div class="feedback-rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
+                    <div class="col-md-8">
+                        <h2 class="empresa">SOBRE A EMPRESA</h2>
+                        <p class="empresa-descricao">Com uma bagagem de 9 anos de experiência no mercado, a empresa TF Arte em Couro, localizada no triângulo mineiro, ganhou destaque em todo o Brasil através de seus trabalhos artesanais, produzidos sempre prezando pela QUALIDADE e DURABILIDADE associadas a um DESIGNER ATRAENTE. Suas peças apresentam traços de exclusividade, pois são vendidas somente por encomenda, visando atender atenciosamente o gosto particular de cada cliente, que pode solicitar personalizações de detalhes como cores, nomes ou iniciais, logomarcas, tamanhos diferentes e muito mais!</p>
+                        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex">
+                                        <img src="./img/cintos_masculinos/entalhado_indio.jpg" class="d-block" alt="Produto 1">
+                                        <img src="./img/cintos_femininos/pedraria_1.jpg" class="d-block" alt="Produto 2">
+                                        <img src="./img/cintos_infantis/femn_pedraria_flores.jpg" class="d-block" alt="Produto 3">
+                                        <img src="./img/cintos_infantis/masc_balaiado_boizinhoponta.jpg" class="d-block" alt="Produto 4">
+                                        <img src="./img/carteiras_masculinas/carteira_boi&bandeiras.jpg" class="d-block" alt="Produto 5">
+                                        <img src="./img/carteiras_femininas/carteira_modelo5_frente.jpg" class="d-block" alt="Produto 6">
+                                        <img src="./img/outros/abridor_garrafa1.jpg" class="d-block" alt="Produto 7">
+                                        <img src="./img/outros/correia_espora5.jpg" class="d-block" alt="Produto 8">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-flex">
+                                    <img src="./img/cintos_masculinos/entalhado_indio.jpg" class="d-block" alt="Produto 9">
+                                        <img src="./img/cintos_femininos/pedraria_1.jpg" class="d-block" alt="Produto 10">
+                                        <img src="./img/cintos_infantis/femn_pedraria_flores.jpg" class="d-block" alt="Produto 11">
+                                        <img src="./img/cintos_infantis/masc_balaiado_boizinhoponta.jpg" class="d-block" alt="Produto 12">
+                                        <img src="./img/carteiras_masculinas/carteira_boi&bandeiras.jpg" class="d-block" alt="Produto 13">
+                                        <img src="./img/carteiras_femininas/carteira_modelo5_frente.jpg" class="d-block" alt="Produto 14">
+                                        <img src="./img/outros/abridor_garrafa1.jpg" class="d-block" alt="Produto 15">
+                                        <img src="./img/outros/correia_espora5.jpg" class="d-block" alt="Produto 16">
+                                    </div>
+                            </div>
+                            <a class="carousel-control-prev" role="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" role="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Feedback Card 2 -->
-                <div class="feedback-card swiper-slide">
-                    <div class="feedback-header">
-                        <h5>Maria Souza</h5>
-                        <p>2024-06-20</p>
-                    </div>
-                    <div class="feedback-body">
-                        <p>Adorei o produto, chegou rápido e bem embalado.</p>
-                    </div>
-                    <div class="feedback-rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9734;</span>
-                    </div>
-                </div>
-                <!-- Adicione mais feedbacks conforme necessário -->
             </div>
-            <!-- Botões de navegação -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <!-- Paginação -->
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-   </section>
-
+    </section>
 
   <footer class="rodape text-white py-2 d-none d-md-block">
     <div class="container">
